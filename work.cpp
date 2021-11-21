@@ -192,7 +192,9 @@ class My_storage
 
 void test_my_storage(int number)
 {
-    int t = clock();
+    time_t start, end;
+
+    time(&start);
 
     srand(time(NULL));
 
@@ -229,17 +231,22 @@ void test_my_storage(int number)
 
     printf("Number of non-empty objects = %d\n", s1.getVolume());
 
-    printf("\n\nExecution time = %.5f sec\n", (double)t / (double)CLOCKS_PER_SEC);
+    time(&end);
+
+    printf("\n\nExecution time = %f sec\n", difftime(end, start));
 }
 
 int main()
 {
     test_my_storage(100);
+    printf("\n");
 
     test_my_storage(1000);
+    printf("\n");
 
     test_my_storage(10000);
-    
+    printf("\n");
+
     system("pause");
     return 0;
 }
