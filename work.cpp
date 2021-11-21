@@ -141,6 +141,27 @@ class My_storage
         {
             objects[i] = NULL;
         }
+
+        void deleteObject(int index)
+        {
+            size--;
+
+            Thing** new_objects = new Thing* [size];
+
+            for (int i = 0; i < index; i++)
+            {
+                new_objects[i] = objects[i];
+            }
+
+            for (int i = index; i < size; i++)
+            {
+                new_objects[i] = objects[i + 1];
+            }
+            
+            delete[] objects;
+
+            objects = new_objects;
+        }
 };
 
 int main()
