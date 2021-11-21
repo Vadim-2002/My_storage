@@ -17,6 +17,41 @@ class Thing
         virtual void drow() = 0;
 };
 
+class Ellipse : public Thing
+{
+    protected:
+        int x, y;
+        int a, b;
+        std::string name;
+
+    public:
+        Ellipse()
+        {
+            x = 0, y = 0;
+            a = 0, b = 0;
+        }
+
+        Ellipse(int x, int y, int a, int b)
+        {
+            this->x = x;
+            this->y = y;
+            this->a = a;
+            this->b = b;
+        }
+
+        Ellipse(const Ellipse &object)
+        {
+            x = object.x;
+            y = object.y;
+            a = object.a;
+            b = object.b;
+        }
+
+        ~Ellipse() override
+        {
+        }
+};
+
 int main()
 {
     
