@@ -50,6 +50,11 @@ class Ellipse : public Thing
         ~Ellipse() override
         {
         }
+
+        double eccentricity()
+        {
+            return sqrt(1 - (b*b/a/a));
+        }
 };
 
 int main()
