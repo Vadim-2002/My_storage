@@ -67,6 +67,42 @@ class Ellipse : public Thing
         }
 };
 
+class ColoredEllipse: public Ellipse
+{
+    protected:
+        int color;
+
+    public:
+        ColoredEllipse() : Ellipse()
+        {
+        
+            color = 0;
+        }
+
+        ColoredEllipse(int x, int y, int a, int b, int color) : Ellipse(x, y, a, b)
+        {
+            this->color = color;
+        }
+
+        ColoredEllipse(const ColoredEllipse &object)
+        {
+            x = object.x;
+            y = object.y;
+            a = object.a;
+            b = object.b;
+            color = object.color;
+        }
+
+        ~ColoredEllipse()
+        {
+        }
+
+        void change_color(int new_color)
+        {
+            color = new_color;
+        }
+};
+
 int main()
 {
     
