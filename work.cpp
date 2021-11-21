@@ -103,6 +103,26 @@ class ColoredEllipse: public Ellipse
         }
 };
 
+class My_storage
+{
+    private:
+        Thing** objects;
+        int size;
+
+    public:
+        My_storage(int size)
+        {
+            this->size = size;
+            objects = new Thing* [size];
+        }
+
+        ~My_storage()
+        {
+            delete[] objects;
+            printf("delete\n");
+        }
+};
+
 int main()
 {
     
