@@ -162,6 +162,21 @@ class My_storage
 
             objects = new_objects;
         }
+
+        void addObjects(int index, Thing* object)
+        {
+            size = index + 1;
+            Thing** new_objects = new Thing* [size];
+
+            for (int i = 0; i < index; i++)
+                new_objects[i] = objects[i];
+            
+            delete[] objects;
+
+            objects = new_objects;
+
+            objects[index] = object;
+        }
 };
 
 int main()
