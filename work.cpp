@@ -55,6 +55,16 @@ class Ellipse : public Thing
         {
             return sqrt(1 - (b*b/a/a));
         }
+
+        void to_name(std::string name) override
+        {
+            printf("to_name() ");
+        }
+
+        void drow() override
+        {
+            printf("drow() ");
+        }
 };
 
 int main()
