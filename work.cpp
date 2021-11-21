@@ -190,6 +190,48 @@ class My_storage
         }
 };
 
+void test_my_storage(int number)
+{
+    int t = clock();
+
+    srand(time(NULL));
+
+    My_storage s1(number);
+
+    for (int i = 0; i < s1.getCount(); i++)
+    {
+        s1.setObject(i, new Ellipse(i, -i*2, i/5, i/10));
+    }
+
+    for (int i = 0; i < s1.getCount(); i++)
+    {
+        if (rand() % 2 == 0)
+            s1.getObject(i).drow();
+        else
+            s1.getObject(i).to_name("Name");
+    }
+
+    printf("\n\nInitial size = %d\n", s1.getCount());
+
+    s1.addObjects(s1.getCount(), new ColoredEllipse());
+
+    printf("\n\nSize after adding ColoredEllipse = %d\n", s1.getCount());
+
+    s1.nullObject(rand()%number);
+
+    printf("Size after zeroing the object = %d\n", s1.getCount());
+
+    printf("Number of non-empty objects = %d\n", s1.getVolume());
+
+    s1.deleteObject((rand()*rand())%number);
+
+    printf("Size after object deletion = %d\n", s1.getCount());
+
+    printf("Number of non-empty objects = %d\n", s1.getVolume());
+
+    printf("\n\nExecution time = %.5f sec\n", (double)t / (double)CLOCKS_PER_SEC);
+}
+
 int main()
 {
     
