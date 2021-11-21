@@ -234,6 +234,11 @@ void test_my_storage(int number)
 
 int main()
 {
+    test_my_storage(100);
+
+    test_my_storage(1000);
+
+    test_my_storage(10000);
     
     system("pause");
     return 0;
