@@ -177,6 +177,17 @@ class My_storage
 
             objects[index] = object;
         }
+
+        int getVolume()
+        {
+            int volume = 0;
+
+            for (int i = 0; i < size; i++)
+                if (objects[i] != NULL)
+                    volume++;
+            
+            return volume;
+        }
 };
 
 int main()
