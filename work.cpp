@@ -121,6 +121,26 @@ class My_storage
             delete[] objects;
             printf("delete\n");
         }
+
+        void setObject(int i, Thing* object)
+        {
+            objects[i] = object;
+        }
+
+        int getCount()
+        {
+            return size;
+        }
+
+        Thing& getObject(int i)
+        {
+            return *objects[i];
+        }
+
+        void nullObject(int i)
+        {
+            objects[i] = NULL;
+        }
 };
 
 int main()
